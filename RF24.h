@@ -128,6 +128,8 @@ public:
   virtual ~RF24() {};
   #endif
 
+  bool waitAvailableTimeout(uint16_t timeout);
+
   /**
    * Begin operation of the chip
    * 

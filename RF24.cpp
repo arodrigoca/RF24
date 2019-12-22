@@ -12,6 +12,20 @@
 
 /****************************************************************************/
 
+bool RF24::waitAvailableTimeout(uint16_t timeout)
+{
+    unsigned long starttime = millis();
+    while ((millis() - starttime) < timeout)
+    {
+        if (available())
+	{
+           return true;
+	}
+    }
+    return false;
+}
+
+
 void RF24::csn(bool mode)
 {
 
